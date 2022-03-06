@@ -1,0 +1,1 @@
+export const HEADER_SWITCH_TABS = 'header_switch_tabs'
