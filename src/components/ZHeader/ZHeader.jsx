@@ -6,9 +6,13 @@ import { HeaderWrapper } from './style'
 import { headerCreators, drawerCreators } from '../../store/components'
 
 class ZHeader extends React.Component {
-  render() {
-    const { visible, items, tab, handleToggle, handleSwitch } = this.props
+  componentDidMount() {
+    this.props.getTabs()
+  }
 
+  render() {
+    const { visible, tabs, tab, handleToggle, handleSwitch } = this.props
+    
     return (
       <HeaderWrapper>
         <Row>
@@ -22,7 +26,7 @@ class ZHeader extends React.Component {
 
             <ul className='z-menu'>
               {
-                items.map(item => (
+                tabs.map(item => (
                   <li 
                     key={ item.value }
                     className={ item.value === tab ? 'actived z-menu-item' : 'z-menu-item' }
@@ -49,17 +53,21 @@ class ZHeader extends React.Component {
 
 const mapStateToProps = (state) => ({
   visible: state.getIn(['drawer', 'visible']),
-  items: state.getIn(['header', 'items']).toJS(),
+  tabs: state.getIn(['header', 'tabs']).toJS(),
   tab: state.getIn(['header', 'tab'])
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  handleToggle(visible) {
-    dispatch(drawerCreators.getDrawerToggleVisible(visible))
+  getTabs() {
+    dispatch(headerCreators.headerGetTabs())
   },
 
   handleSwitch(tab) {
-    dispatch(headerCreators.getHeaderSwitchTab(tab))
+    dispatch(headerCreators.headerSwitchTab(tab))
+  },
+
+  handleToggle(visible) {
+    dispatch(drawerCreators.getDrawerToggleVisible(visible))
   }
 })
 

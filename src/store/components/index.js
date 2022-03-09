@@ -1,12 +1,12 @@
-import { types as headerTypes, creators as headerCreators, reducer as headerReducer } from './ZHeader'
-import { types as drawerTypes, creators as drawerCreators, reducer as drawerReducer } from './ZDrawer'
+import { constants as headerConstants, creators as headerCreators, reducer as headerReducer } from './ZHeader'
+import { constants as drawerConstants, creators as drawerCreators, reducer as drawerReducer } from './ZDrawer'
 
 export {
-  headerTypes,
+  headerConstants,
   headerCreators,
   headerReducer,
 
-  drawerTypes,
+  drawerConstants,
   drawerCreators,
   drawerReducer
 }

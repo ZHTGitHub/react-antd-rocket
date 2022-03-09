@@ -1,21 +1,21 @@
 import { fromJS } from 'immutable'
-import * as types from './actionTypes'
+import * as constants from './constants'
 
 const defaultState = fromJS({
-  items: [
-    { label: '组件', value: 'component' },
-    { label: '表单', value: 'form' },
-    { label: 'JS Util', value: 'util' },
-    { label: '样式', value: 'style' }
-  ],
+  tabs: [],
   tab: 'component'
 })
 
 const reducer = (state = defaultState, action) => {
   const { type, payload } = action
 
-  if(type === types.HEADER_SWITCH_TABS) {
+  if(type === constants.HEADER_SWITCH_TAB) {
     return state.set('tab', payload.tab)
+  }
+
+  if(type === constants.HEADER_SET_TABS) {
+    console.log(payload)
+    return state.set('tabs', fromJS(payload.tabs))
   }
 
   return state

@@ -1,0 +1,10 @@
+{
+  "code": 200,
+  "items": [
+    { "label": "组件", "value": "component" },
+    { "label": "表单", "value": "form" },
+    { "label": "JS Util", "value": "util" },
+    { "label": "样式", "value": "style" }
+  ],
+  "message": "获取列表成功!"
+}

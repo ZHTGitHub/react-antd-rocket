@@ -1,7 +1,7 @@
-import * as types from './actionTypes'
+import * as constants from './constants'
 
 export const getDrawerToggleVisible = (visible) => ({
-  type: types.DRAWER_TOGGLE_VISIBLE,
+  type: constants.DRAWER_TOGGLE_VISIBLE,
   payload: {
     visible
   }

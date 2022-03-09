@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable'
-import * as types from './actionTypes'
+import * as constants from './constants'
 
 const defaultState = fromJS({
   visible: false
@@ -8,7 +8,7 @@ const defaultState = fromJS({
 const reducer = (state = defaultState, action) => {
   const { type, payload } = action
 
-  if(type === types.DRAWER_TOGGLE_VISIBLE) {
+  if(type === constants.DRAWER_TOGGLE_VISIBLE) {
     return state.set('visible', !payload.visible)
   }
 
