@@ -1,7 +1,13 @@
 import { combineReducers } from 'redux-immutable'
-import { headerReducer, drawerReducer } from './components'
+import { formsReducer } from './forms'
+
+import { 
+  headerReducer, 
+  drawerReducer 
+} from './components'
 
 const reducer = combineReducers({
+  forms: formsReducer,
   header: headerReducer,
   drawer: drawerReducer
 })

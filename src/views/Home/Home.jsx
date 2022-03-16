@@ -2,12 +2,18 @@ import React, { useRef } from 'react'
 import { Button } from 'antd'
 import { MainLayout } from '../../layouts'
 import { ZDialog, ZDialogConfirm, ZTextField } from '../../components'
+import { connect } from 'react-redux'
 
-const Home = (props) => {
+
+const formId = 'Home'
+
+const HomePage = (props) => {
   const dialogRef = useRef()
 
   const handleOpen = () => {
-    dialogRef.current.open()
+    // dialogRef.current.open()
+
+    console.log(props.forms[formId])
 
     // ZDialogConfirm.open({
     //   visible: true,
@@ -27,7 +33,16 @@ const Home = (props) => {
       <MainLayout>
         <Button onClick={ handleOpen }>TOGGLE</Button>
 
-        <ZTextField></ZTextField>
+        <ZTextField 
+          formId={ formId }
+          formKey='firstName'
+        ></ZTextField>
+
+        <ZTextField 
+          formId={ formId }
+          formKey='lastName'
+        ></ZTextField>
+
 
         <ZDialog 
           ref={ dialogRef }
@@ -39,4 +54,12 @@ const Home = (props) => {
   )
 }
 
-export default Home
+const mapStateToProps = (state) => ({
+  forms: state.get('forms').forms
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage)

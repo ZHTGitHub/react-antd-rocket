@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Input } from 'antd'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { formsCreators } from '../../store/forms'
 
 const ZTextField = (props) => {
   const [value, setValue] = useState()
@@ -11,7 +12,16 @@ const ZTextField = (props) => {
   }, [value])
 
   const handleChange = (event) => {
-    setValue(event.target.value)
+    const value = event.target.value
+    console.log(value)
+    console.log(props.formId)
+    console.log(props.formKey)
+    // setValue(event.target.value)
+    props.changeValue({
+      formId: props.formId,
+      formKey: props.formKey,
+      value
+    })
   }
 
   return (
@@ -27,12 +37,14 @@ ZTextField.propTypes = {
   formKey: PropTypes.string
 }
 
-const mapStateToProps = () => ({
-
+const mapStateToProps = (state) => ({
+  forms: state.forms
 })
 
-const mapDispatchToProps = () => ({
-
+const mapDispatchToProps = (dispatch) => ({
+  changeValue(info) {
+    dispatch(formsCreators.setFormValueByKey(info))
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ZTextField)
