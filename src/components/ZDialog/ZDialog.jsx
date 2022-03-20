@@ -1,32 +1,84 @@
-import React, { useState, useImperativeHandle } from 'react'
-import { Modal } from 'antd'
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom'
+import ZDialogUI from './ZDialogUI'
 
-const ZDialog = (props, ref) => {
-  const [dialog, setDialog] = useState(false)
+const defaultOptions = {
+  visible: false,
+  title: '',
+  content: ''
+}
 
+let [alert, confirm] = [() => {}, () => {}]
+
+const ZDialog = (props) => {
+  const [visible, setVisible] = useState(false)
+  const [options, setOptions] = useState(defaultOptions)
+
+  // 提示弹窗
+  alert = (options) => {
+    setOptions({
+      ...defaultOptions,
+      ...options,
+      isAlert: true
+    })
+    open()
+  }
+
+  // 确认弹窗
+  confirm = (options) => {
+    setOptions({
+      ...defaultOptions,
+      ...options,
+      isAlert: false
+    })
+    open()
+  }
+
+  // 取消
+  const handleCancel = () => {
+    options.cancel()
+    close()
+  }
+
+  // 确认
+  const handleConfirm = () => {
+    options.confirm()
+    close()
+  }
+
+  // 关闭
   const close = () => {
-    setDialog(false)
+    setVisible(false)
   }
 
+  // 打开
   const open = () => {
-    setDialog(true)
+    setVisible(true)
   }
-
-  useImperativeHandle(ref, () => ({
-    close,
-    open
-  })) 
 
   return (
-    <Modal 
-      title={ props.title }
-      visible={ dialog }
-      onCancel={ close }
-    >
-      { props.children }
-    </Modal>
+    <ZDialogUI
+      visible={ visible }
+      options={ options }
+      close={ close }
+      handleCancel={ handleCancel }
+      handleConfirm={ handleConfirm }
+    ></ZDialogUI>
   )
 }
 
-export default React.forwardRef(ZDialog)
+export default {
+  alert: (customOptions) => alert(customOptions),
+  confirm: (customOptions) => confirm(customOptions)
+}
 
+let el = document.querySelector('#z-dialog')
+
+if(!el) {
+  el = document.createElement('div')
+  el.className = 'z-dialog'
+  el.id = 'z-dialog'
+  document.body.append(el)
+}
+
+ReactDOM.render(<ZDialog />, el)

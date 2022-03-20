@@ -1,15 +1,15 @@
 import ZHeader from './ZHeader'
 import ZDrawer from './ZDrawer'
+import ZModal from './ZModal'
 import ZDialog from './ZDialog'
-import ZDialogConfirm from './ZDialogConfirm'
 
 import ZTextField from './ZTextField'
 
 export { 
   ZHeader,
   ZDrawer,
+  ZModal,
   ZDialog,
-  ZDialogConfirm,
 
   ZTextField
 }
