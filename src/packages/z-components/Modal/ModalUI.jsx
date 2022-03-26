@@ -1,7 +1,7 @@
 import React from 'react'
-import { ZDialogWrapper } from './style'
+import { ModalUIWrapper } from './style'
 
-const ZDialogUI = (props) => {
+const ModalUI = (props) => {
   const { visible, options, close, handleCancel, handleConfirm } = props
 
   return (
@@ -9,7 +9,7 @@ const ZDialogUI = (props) => {
       {
         visible 
         ?
-        <ZDialogWrapper>
+        <ModalUIWrapper>
           <div className='overlay' onClick={ close }></div>
 
           <div className='dialog'>
@@ -65,7 +65,7 @@ const ZDialogUI = (props) => {
               >确认</div>
             </div>
           </div>
-        </ZDialogWrapper>
+        </ModalUIWrapper>
         :
         null
       }
@@ -73,4 +73,4 @@ const ZDialogUI = (props) => {
   )
 }
 
-export default ZDialogUI
+export default ModalUI

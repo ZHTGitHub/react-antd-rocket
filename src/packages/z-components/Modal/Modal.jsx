@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import ZDialogUI from './ZDialogUI'
+import ModalUI from './ModalUI'
 
 const defaultOptions = {
   visible: false,
@@ -10,7 +10,7 @@ const defaultOptions = {
 
 let [alert, confirm] = [() => {}, () => {}]
 
-const ZDialog = (props) => {
+const Modal = (props) => {
   const [visible, setVisible] = useState(false)
   const [options, setOptions] = useState(defaultOptions)
 
@@ -57,13 +57,13 @@ const ZDialog = (props) => {
   }
 
   return (
-    <ZDialogUI
+    <ModalUI
       visible={ visible }
       options={ options }
       close={ close }
       handleCancel={ handleCancel }
       handleConfirm={ handleConfirm }
-    ></ZDialogUI>
+    ></ModalUI>
   )
 }
 
@@ -81,4 +81,4 @@ if(!el) {
   document.body.append(el)
 }
 
-ReactDOM.render(<ZDialog />, el)
+ReactDOM.render(<Modal />, el)

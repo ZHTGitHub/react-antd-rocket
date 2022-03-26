@@ -1,7 +1,7 @@
 import React, { useState, useImperativeHandle } from 'react'
 import { Modal } from 'antd'
 
-const ZModal = (props, ref) => {
+const Dialog = (props, ref) => {
   const [visible, setVisible] = useState(false)
 
   // 关闭
@@ -30,5 +30,5 @@ const ZModal = (props, ref) => {
   )
 }
 
-export default React.forwardRef(ZModal)
+export default React.forwardRef(Dialog)
 

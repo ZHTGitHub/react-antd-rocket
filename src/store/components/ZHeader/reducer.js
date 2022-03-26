@@ -3,13 +3,14 @@ import * as constants from './constants'
 
 const defaultState = fromJS({
   tabs: [],
-  tab: 'component'
+  tab: 'components'
 })
 
 const reducer = (state = defaultState, action) => {
   const { type, payload } = action
 
   if(type === constants.HEADER_SWITCH_TAB) {
+    console.log(payload)
     return state.set('tab', payload.tab)
   }
 

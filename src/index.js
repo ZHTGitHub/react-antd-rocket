@@ -1,10 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import 'antd/dist/antd.css';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+import './index.css'
+import 'antd/dist/antd.css'
+
+import App from './App'
+import Home from 'pages/home'
+import Components from 'pages/components'
+import Forms from 'pages/forms'
+import Utils from 'pages/utils'
+import Styles from 'pages/styles'
 
 ReactDOM.render(
-  <App />,
+  <Router>
+    <Routes>
+      <Route path='/' element={ <App /> }>
+        <Route index element={ <Home /> }></Route>
+        <Route path='components' element={ <Components /> }></Route>
+        <Route path='forms' element={ <Forms /> }></Route>
+        <Route path='utils' element={ <Utils /> }></Route>
+        <Route path='styles' element={ <Styles /> }></Route>
+      </Route>
+    </Routes>
+  </Router>,
   document.getElementById('root')
-);
+)

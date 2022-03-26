@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Input } from 'antd'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { formsCreators } from '../../store/forms'
+import { formsCreators } from 'store/forms'
 
-const ZTextField = (props) => {
+const TextField = (props) => {
   const [value, setValue] = useState()
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const ZTextField = (props) => {
   )
 }
 
-ZTextField.propTypes = {
+TextField.propTypes = {
   formId: PropTypes.string,
   formKey: PropTypes.string
 }
@@ -47,5 +47,5 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ZTextField)
+export default connect(mapStateToProps, mapDispatchToProps)(TextField)
 

@@ -1,30 +1,30 @@
 import React, { useRef } from 'react'
 import { Button } from 'antd'
-import { MainLayout } from '../../layouts'
-import { ZModal, ZDialog, ZTextField } from '../../components'
+import { MainLayout } from 'layouts'
+import { ZModal, ZDialog, ZTextField } from 'packages/z-components'
 import { connect } from 'react-redux'
 
 
 const formId = 'Home'
 
 const HomePage = (props) => {
-  const madalRef = useRef()
+  const dialogRef = useRef()
 
   const handleOpen = () => {
-    madalRef.current.open()
+    dialogRef.current.open()
 
     // console.log(props.forms[formId])
 
-    // ZDialog.confirm({
-    //   title: '删除警告',
-    //   content: '请确认是否要删除当前选项？',
-    //   confirm: () => {
-    //     console.log('confirm')
-    //   },
-    //   cancel: () => {
-    //     console.log('cancel')
-    //   }
-    // })
+    ZModal.confirm({
+      title: '删除警告',
+      content: '请确认是否要删除当前选项？',
+      confirm: () => {
+        console.log('confirm')
+      },
+      cancel: () => {
+        console.log('cancel')
+      }
+    })
   }
 
   return (
@@ -43,11 +43,11 @@ const HomePage = (props) => {
         ></ZTextField>
 
 
-        <ZModal 
-          ref={ madalRef }
+        <ZDialog 
+          ref={ dialogRef }
         >
           233
-        </ZModal>
+        </ZDialog>
       </MainLayout>
     </div>
   )

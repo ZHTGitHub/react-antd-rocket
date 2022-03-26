@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ZDialogWrapper = styled.div`
+export const ModalUIWrapper = styled.div`
   position: fixed;
   display: flex;
   justify-content: center;
