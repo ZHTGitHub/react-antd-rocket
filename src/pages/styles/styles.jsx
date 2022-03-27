@@ -1,11 +1,10 @@
 import * as React from 'react'
-import { MainLayout } from 'layouts'
 
 const Styles = () => {
   return (
-    <MainLayout>
+    <div className='styles'>
       styles
-    </MainLayout>
+    </div>
   )
 }
 

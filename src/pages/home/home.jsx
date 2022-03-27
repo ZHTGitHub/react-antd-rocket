@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import { Button } from 'antd'
-import { MainLayout } from 'layouts'
 import { ZModal, ZDialog, ZTextField } from 'packages/z-components'
 import { connect } from 'react-redux'
 
@@ -29,7 +28,7 @@ const HomePage = (props) => {
 
   return (
     <div className='home'>
-      <MainLayout>
+      <div className='home'>
         <Button onClick={ handleOpen }>TOGGLE</Button>
 
         <ZTextField 
@@ -48,7 +47,7 @@ const HomePage = (props) => {
         >
           233
         </ZDialog>
-      </MainLayout>
+      </div>
     </div>
   )
 }

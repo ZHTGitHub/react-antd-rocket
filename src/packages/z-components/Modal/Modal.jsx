@@ -36,13 +36,13 @@ const Modal = (props) => {
 
   // 取消
   const handleCancel = () => {
-    options.cancel()
+    options.cancel && options.cancel()
     close()
   }
 
   // 确认
   const handleConfirm = () => {
-    options.confirm()
+    options.confirm && options.confirm()
     close()
   }
 

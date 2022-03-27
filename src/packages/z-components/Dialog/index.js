@@ -1,4 +1,4 @@
-import Dialog from './Dialog'
+import ZDialog from './Dialog'
 
-export { Dialog }
-export default Dialog
+export { ZDialog }
+export default ZDialog

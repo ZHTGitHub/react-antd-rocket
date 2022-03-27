@@ -17,6 +17,7 @@ export const HeaderWrapper = styled.div`
     min-height: 64px;
     height: 64px;
     line-height: 64px;
+    cursor: pointer;
   }
 
   .menu-row {

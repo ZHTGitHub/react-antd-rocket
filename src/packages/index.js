@@ -1,15 +1,7 @@
-import ZHeader from './ZHeader'
-import ZDrawer from './ZDrawer'
-import ZModal from './ZModal'
-import ZDialog from './ZDialog'
-
-import ZTextField from './ZTextField'
+import { ZDialog, ZModal, ZTextField } from './z-components'
 
 export { 
-  ZHeader,
-  ZDrawer,
-  ZModal,
   ZDialog,
-
+  ZModal,
   ZTextField
 }

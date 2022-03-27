@@ -1,11 +1,10 @@
 import * as React from 'react'
-import { MainLayout } from 'layouts'
 
 const Forms = () => {
   return (
-    <MainLayout>
+    <div className='forms'>
       forms
-    </MainLayout>
+    </div>
   )
 }
 

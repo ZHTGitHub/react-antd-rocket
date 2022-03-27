@@ -1,11 +1,10 @@
 import * as React from 'react'
-import { MainLayout } from 'layouts'
 
 const Utils = () => {
   return (
-    <MainLayout>
+    <div className='utils'>
       utils
-    </MainLayout>
+    </div>
   )
 }
 

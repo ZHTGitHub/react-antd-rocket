@@ -1,0 +1,29 @@
+{
+  "code": 200,
+  "items": [
+    { 
+      "label": "组件", 
+      "value": "components", 
+      "pathname": "/pages/components" 
+    },
+
+    { 
+      "label": "表单", 
+      "value": "forms", 
+      "pathname": "/pages/forms" 
+    },
+
+    { 
+      "label": "JS Util", 
+      "value": "utils", 
+      "pathname": "/pages/utils" 
+    },
+
+    { 
+      "label": "样式", 
+      "value": "styles", 
+      "pathname": "/pages/styles" 
+    }
+  ],
+  "message": "获取成功!"
+}

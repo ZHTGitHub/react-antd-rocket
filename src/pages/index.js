@@ -1,5 +1,4 @@
-import Home from './Home'
+import Pages from './pages'
 
-export {
-  Home
-}
+export { Pages }
+export default Pages

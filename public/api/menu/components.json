@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "items": [
+    { 
+      "label": "数据录入",
+      "value": "dataInput",
+      "children": [
+        { 
+          "label": "Text field 文本框",
+          "value": "text-field",
+          "pathname": "/pages/components/text-field" 
+        }
+      ]
+    },
+
+    {
+      "label": "反馈",
+      "value": "feedback",
+      "children": [
+        {
+          "label": "对话框 Dialog",
+          "value": "dialog",
+          "pathname": "/pages/components/dialog" 
+        },
+
+        {
+          "label": "弹出框 Modal",
+          "value": "modal",
+          "pathname": "/pages/components/modal" 
+        }
+      ]
+    }
+  ],
+  "message": "获取成功!"
+}

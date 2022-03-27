@@ -1,37 +1,42 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Row, Col } from 'antd'
-import { SettingOutlined } from '@ant-design/icons'
 import { HeaderWrapper } from './style'
-import { headerCreators, drawerCreators } from '../../store/components'
+import { headerCreators } from '../../store/components'
 
 const ZHeader = (props) => {
+  const [items, setItems] = useState([])
+  const [selected, setSelected] = useState()
+
   const location = useLocation()
   const navigate = useNavigate()
 
-  useEffect(() => {
-    const pathname = location.pathname.substr(1)
-    props.mapSwitch(pathname)
-    props.getTabs()
+  useEffect(async () => {
+    const splitPathname = location.pathname.split('/')
+    setSelected(splitPathname[2])
+
+    const result = await props.getTabs()
+
+    if(result.code === 200) {
+      setItems(result.items)
+    }
   }, [])
 
   const navigateHome = () => {
-    navigate('/')
+    navigate('/pages')
   }
 
-  const handleSwitch = (item) => {
+  const switchTabs = (item) => {
+    setSelected(item.value)
     navigate(item.pathname)
-    props.mapSwitch(item.value)
   }
 
-  const { visible, tabs, tab, handleToggle } = props
-  
   return (
     <HeaderWrapper>
       <Row>
         <Col className='z-row' xs={ 24 } sm={ 24 } md={ 6 } lg={ 6 } xl={ 5 } xxl={ 4 }>
-          <h1 onClick={ navigateHome }>LOGO</h1>
+          <h1 onClick={ navigateHome }>React Antd Rocket</h1>
         </Col>
 
         <Col className='menu-row z-row' xs={ 0 } sm={ 0 } md={ 18 } lg={ 18 } xl={ 19 } xxl={ 20 }>
@@ -40,48 +45,25 @@ const ZHeader = (props) => {
 
           <ul className='z-menu'>
             {
-              tabs.map(item => (
+              items.map(item => (
                 <li 
                   key={ item.value }
-                  className={ item.value === tab ? 'actived z-menu-item' : 'z-menu-item' }
-                  onClick={ () => handleSwitch(item) }
+                  className={ item.value === selected ? 'actived z-menu-item' : 'z-menu-item' }
+                  onClick={ () => switchTabs(item) }
                 >{ item.label }</li>
               ))
             }
           </ul>
-
-          <div className='setting-box'>
-            <SettingOutlined style={{ 
-                color: 'rgba(0, 0, 0, .7)',
-                fontSize: '18px' 
-              }} 
-              onClick={ () => handleToggle(visible) }
-            />
-          </div>
         </Col>
       </Row>
     </HeaderWrapper>
   )
 }
 
-const mapStateToProps = (state) => ({
-  visible: state.getIn(['drawer', 'visible']),
-  tabs: state.getIn(['header', 'tabs']).toJS(),
-  tab: state.getIn(['header', 'tab'])
-})
-
 const mapDispatchToProps = (dispatch) => ({
-  getTabs() {
-    dispatch(headerCreators.headerGetTabs())
-  },
-
-  mapSwitch(tab) {
-    dispatch(headerCreators.headerSwitchTab(tab))
-  },
-
-  handleToggle(visible) {
-    dispatch(drawerCreators.getDrawerToggleVisible(visible))
+  async getTabs() {
+    return await dispatch(headerCreators.headerGetTabs())
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ZHeader)
+export default connect(null, mapDispatchToProps)(ZHeader)
