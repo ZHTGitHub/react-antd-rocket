@@ -1,8 +1,16 @@
 {
   "name": "react-antd-rocket",
   "version": "0.1.0",
-  "private": true,
-  "workspaces": ["docs"],
+  "description": "基于 React+Antd 的后台管理系统框架",
+  "author": "zenghaitao",
+  "private": false,
+  "main": "",
+  "license": "MIT",
+  "keywords": [
+    "rocket",
+    "react",
+    "component"
+  ],
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@testing-library/jest-dom": "^5.14.1",
