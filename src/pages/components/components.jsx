@@ -9,14 +9,17 @@ import { MainWrapper } from './style'
 const Components = (props) => {
   const [items, setItems] = useState([])
 
-  useEffect(async () => {
+  useEffect(() => {
+    getMenu()
+  }, [])  // eslint-disable-line
+
+  const getMenu = async () => {
     const result = await props.getMenu()
-    console.log(result)
 
     if(result.code === 200) {
       setItems(result.items)
     }
-  }, [])
+  }
 
   return (
     <MainWrapper>

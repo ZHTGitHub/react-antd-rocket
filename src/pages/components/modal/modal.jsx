@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'antd'
-import { ZModal } from 'packages'
+import { ZModal } from 'react-antd-rocket'
 
 const Modal = () => {
 

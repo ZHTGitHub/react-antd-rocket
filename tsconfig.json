@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "target": "ES5"
+    "target": "es5"
   }
 }

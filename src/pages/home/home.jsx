@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { Button } from 'antd'
-import { ZModal, ZDialog, ZTextField } from 'packages/z-components'
+import { ZModal, ZDialog, ZTextField } from 'packages/components'
 import { connect } from 'react-redux'
 
 

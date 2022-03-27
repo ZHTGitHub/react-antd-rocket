@@ -4,14 +4,16 @@
   "description": "基于 React+Antd 的后台管理系统框架",
   "author": "zenghaitao",
   "private": false,
-  "main": "",
+  "main": "lib/index.js",
   "license": "MIT",
   "keywords": [
     "rocket",
     "react",
     "component"
   ],
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "peerDependencies": {
     "antd": ">=4.18.9",
     "react": ">=17.0.2",
@@ -32,22 +34,23 @@
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
     "react-router-dom": "6",
     "react-scripts": "5.0.0",
-    "redux-immutable": "^4.0.0",
-    "react-redux": "^7.2.6",
     "redux": "^4.1.2",
+    "redux-immutable": "^4.0.0",
     "redux-thunk": "^2.4.1",
     "styled-components": "^5.3.3",
     "typescript": "^4.6.3",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "set BROWSER=none && set PORT=9967 && react-scripts start",
+    "start": "export BROWSER=none && export PORT=9967 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lib": "react-scripts build"
+    "lib": "tsc -p tsconfig.build.json",
+    "publish": "npm run lib"
   },
   "eslintConfig": {
     "extends": [
@@ -66,5 +69,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "react-antd-rocket": "^0.1.0"
   }
 }

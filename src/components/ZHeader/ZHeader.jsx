@@ -12,16 +12,20 @@ const ZHeader = (props) => {
   const location = useLocation()
   const navigate = useNavigate()
 
-  useEffect(async () => {
+  useEffect(() => {
     const splitPathname = location.pathname.split('/')
     setSelected(splitPathname[2])
 
+    getTabs()
+  }, [])  // eslint-disable-line
+
+  const getTabs = async () => {
     const result = await props.getTabs()
 
     if(result.code === 200) {
       setItems(result.items)
     }
-  }, [])
+  }
 
   const navigateHome = () => {
     navigate('/pages')
