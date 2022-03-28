@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Input } from 'antd'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { formsCreators } from 'store/forms'
+// import { formsCreators } from 'store/forms'
 
 const TextField = (props) => {
   const [value, setValue] = useState()
@@ -43,7 +43,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   changeValue(info) {
-    dispatch(formsCreators.setFormValueByKey(info))
+    // dispatch(formsCreators.setFormValueByKey(info))
   }
 })
 

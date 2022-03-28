@@ -1,6 +1,6 @@
 {
   "name": "react-antd-rocket",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "基于 React+Antd 的后台管理系统框架",
   "author": "zenghaitao",
   "private": false,
@@ -45,7 +45,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "export BROWSER=none && export PORT=9967 && react-scripts start",
+    "start": "set BROWSER=none && set PORT=8888 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
