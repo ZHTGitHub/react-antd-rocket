@@ -18,6 +18,12 @@
       "value": "feedback",
       "children": [
         {
+          "label": "背景蒙版 Backdrop",
+          "value": "backdrop",
+          "pathname": "/pages/components/backdrop" 
+        },
+
+        {
           "label": "对话框 Dialog",
           "value": "dialog",
           "pathname": "/pages/components/dialog" 

@@ -29,7 +29,9 @@ const HomePage = (props) => {
   return (
     <div className='home'>
       <div className='home'>
-        <Button onClick={ handleOpen }>TOGGLE</Button>
+        <Button 
+          onClick={ handleOpen }
+        >OPEN MODAL</Button>
 
         <ZTextField 
           formId={ formId }

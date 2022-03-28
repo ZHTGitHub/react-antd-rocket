@@ -1,9 +1,17 @@
 import React from 'react'
+import { Button } from 'antd'
 
 const Dialog = () => {
+
+  const openDialog = () => {
+
+  }
+
   return (
     <div className='dialog'>
-      dialog
+        <Button 
+          onClick={ openDialog }
+        >OPEN DIALOG</Button>
     </div>
   )
 }

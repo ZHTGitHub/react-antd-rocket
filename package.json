@@ -45,7 +45,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "set BROWSER=none && set PORT=8888 && react-scripts start",
+    "start": "export BROWSER=none && export PORT=8888 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

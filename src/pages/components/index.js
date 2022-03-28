@@ -1,11 +1,15 @@
 import Components from './components'
-import TextField from './textField'
+
+import Backdrop from './backdrop'
 import Dialog from './dialog'
 import Modal from './modal'
+import TextField from './textField'
 
 export { 
-  TextField,
+  Backdrop,
   Dialog,
-  Modal
+  Modal,
+  TextField
 }
+
 export default Components

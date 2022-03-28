@@ -10,9 +10,9 @@ const ModalUI = (props) => {
         visible 
         ?
         <ModalUIWrapper>
-          <div className='overlay' onClick={ close }></div>
+          <div className='backdrop' onClick={ close }></div>
 
-          <div className='dialog'>
+          <div className='modal'>
             {
               options.title
               ?

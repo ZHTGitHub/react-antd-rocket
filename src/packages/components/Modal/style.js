@@ -13,7 +13,7 @@ export const ModalUIWrapper = styled.div`
   z-index: 202;
 
   /* 遮罩 */
-  .overlay {
+  .backdrop {
     position: absolute;
     left: 0;
     top: 0;
@@ -26,10 +26,10 @@ export const ModalUIWrapper = styled.div`
     z-index: inherit;
   }
 
-  .dialog {
+  .modal {
     position: absolute;
     padding-top: 24px;
-    width: 320px;
+    width: 300px;
     border-radius: 8px;
     background-color: #f9f9f9;
     z-index: inherit;

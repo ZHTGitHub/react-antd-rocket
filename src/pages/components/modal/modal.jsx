@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'antd'
-import { ZModal } from 'react-antd-rocket'
+import { ZModal } from 'packages/components'
 
 const Modal = () => {
 
@@ -13,7 +13,9 @@ const Modal = () => {
 
   return (
     <div className='modal'>
-      <Button onClick={ openModal }>OPEN</Button>
+      <Button 
+        onClick={ openModal }
+      >OPEN MODAL</Button>
     </div>
   )
 }
