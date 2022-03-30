@@ -36,10 +36,20 @@ const ModalUI = (props) => {
 
               {
                 options.slot
+                ?
+                <div className='slot'>
+                  { options.slot }
+                </div>
+                :
+                null
+              }
+
+              {
+                options.html
                 ? 
                 <div 
-                  className='slot' 
-                  dangerouslySetInnerHTML={{ __html: options.slot }}
+                  className='html' 
+                  dangerouslySetInnerHTML={{ __html: options.html }}
                 >
                 </div>
                 :
