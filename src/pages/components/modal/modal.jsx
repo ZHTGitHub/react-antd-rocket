@@ -9,7 +9,8 @@ const Modal = () => {
       title: '标题',
       content: '代码是写给人看的',
       slot: <Input></Input>,
-      // html: '<h1>123</h1>'
+      // html: '<h1>123</h1>',
+      width: 320
     })
   }
 

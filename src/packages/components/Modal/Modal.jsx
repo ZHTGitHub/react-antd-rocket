@@ -5,7 +5,8 @@ import ModalUI from './ModalUI'
 const defaultOptions = {
   visible: false,
   title: '',
-  content: ''
+  content: '',
+  width: 300
 }
 
 let [alert, confirm] = [() => {}, () => {}]

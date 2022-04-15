@@ -3,6 +3,7 @@ import { ModalUIWrapper } from './style'
 
 const ModalUI = (props) => {
   const { visible, options, close, handleCancel, handleConfirm } = props
+  const { title, content, slot, __html, width, isAlert } = options
 
   return (
     <React.Fragment>
@@ -12,12 +13,17 @@ const ModalUI = (props) => {
         <ModalUIWrapper>
           <div className='backdrop' onClick={ close }></div>
 
-          <div className='modal'>
+          <div 
+            className='modal'
+            style={{
+              width: `${ width }px`
+            }}
+          >
             {
-              options.title
+              title
               ?
               <div className='title'>
-                { options.title }
+                { title }
               </div>
               : 
               null
@@ -25,31 +31,31 @@ const ModalUI = (props) => {
 
             <div className='content'>
               {
-                options.content
+                content
                 ?
                 <div className='message'>
-                  { options.content }
+                  { content }
                 </div>
                 :
                 null
               }
 
               {
-                options.slot
+                slot
                 ?
                 <div className='slot'>
-                  { options.slot }
+                  { slot }
                 </div>
                 :
                 null
               }
 
               {
-                options.html
+                __html
                 ? 
                 <div 
                   className='html' 
-                  dangerouslySetInnerHTML={{ __html: options.html }}
+                  dangerouslySetInnerHTML={{ __html }}
                 >
                 </div>
                 :
@@ -57,9 +63,9 @@ const ModalUI = (props) => {
               }
             </div>
 
-            <div className={ !options.isAlert ? 'confirm actions' : 'actions' }>
+            <div className={ !isAlert ? 'confirm actions' : 'actions' }>
               {
-                !options.isAlert
+                !isAlert
                 ?
                 <div 
                   className='cancel' 

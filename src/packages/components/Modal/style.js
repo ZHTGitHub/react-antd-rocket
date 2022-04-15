@@ -29,7 +29,7 @@ export const ModalUIWrapper = styled.div`
   .modal {
     position: absolute;
     padding-top: 24px;
-    width: 300px;
+    /* width: 300px; */
     border-radius: 8px;
     background-color: #f9f9f9;
     z-index: inherit;
