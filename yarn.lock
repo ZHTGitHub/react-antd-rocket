@@ -7617,10 +7617,12 @@ rc-virtual-list@^3.2.0, rc-virtual-list@^3.4.2:
     rc-resize-observer "^1.0.0"
     rc-util "^5.0.7"
 
-react-antd-rocket@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/react-antd-rocket/-/react-antd-rocket-0.1.0.tgz#5bd4e3cd0d631d500e05fb47f094b2b612e9e112"
-  integrity sha512-CpViD8+RpEnjfcF3S1kqxxiks/5wnisCvOwfqHGE/KbErs/IA3bWpTzaSXlH1sVmifu+xm7erVv6tmtMiPu3Zw==
+react-antd-rocket@^0.1.0, react-antd-rocket@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/react-antd-rocket/-/react-antd-rocket-0.1.4.tgz#d9a8cdb33129fd881754a7a24d705bfed711880d"
+  integrity sha512-LVPp899Q3lgZIScMceri0udRm1sV2eyJKqmiMVXmeXCdvDxhbiXMu3wrKdRh7+ii5/XO0Z0FVYmTVrmUf1ddyQ==
+  dependencies:
+    react-antd-rocket "^0.1.0"
 
 react-app-polyfill@^3.0.0:
   version "3.0.0"
