@@ -1,9 +1,11 @@
 import React from 'react'
 import { Button, Input } from 'antd'
-import { ZModal } from 'packages/components'
-import { _ } from 'packages/utils'
+import { ZModal, _ } from 'packages'
+// import { ZModal, _ } from 'react-antd-rocket'
 
 const Modal = () => {
+
+  // alert(_.getType('A'))
 
   const openModal = () => {
     ZModal.confirm({
