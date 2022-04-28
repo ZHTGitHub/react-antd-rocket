@@ -285,6 +285,24 @@ export const flatArray = function(value = []) {
   return flatArray(result)
 };
 
+/**
+ * @description 将 url 参数解析为 JS 对象
+ * @param {String} search
+ */ 
+export const queryToObject = function(search) {
+  const obj = {}
+  const params = search.replace(/^\?/, '')
+
+  params.split('&').map(item => {
+      const arr = item.split('=')
+      const key = arr[0]
+      const val = arr[1]
+      obj[key] = val
+  })
+  
+  return obj
+};
+
 export default {
   getType,
   getScrollOffset,
@@ -299,5 +317,6 @@ export default {
   find,
   deepClone,
   removeDuplicate,
-  flatArray
+  flatArray,
+  queryToObject
 }

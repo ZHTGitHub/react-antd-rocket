@@ -1,6 +1,7 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Button } from 'antd'
 import { ZModal, ZDialog, ZTextField } from 'packages/components'
+import lodash from 'packages/utils'
 import { connect } from 'react-redux'
 
 
@@ -8,6 +9,10 @@ const formId = 'Home'
 
 const HomePage = (props) => {
   const dialogRef = useRef()
+
+  useEffect(() => {
+    console.log(lodash.queryToObject('?keyword=1&name=leslie'))
+  }, [])
 
   const handleOpen = () => {
     dialogRef.current.open()
