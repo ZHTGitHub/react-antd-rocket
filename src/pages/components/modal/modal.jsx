@@ -11,7 +11,8 @@ const Modal = () => {
     ZModal.confirm({
       title: '标题',
       content: '代码是写给人看的',
-      slot: <Input></Input>,
+      slot: '232',  
+      // slot: <Input></Input>,  
       // html: '<h1>123</h1>',
       width: 320
     })

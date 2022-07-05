@@ -18,9 +18,9 @@
       "value": "feedback",
       "children": [
         {
-          "label": "背景蒙版 Backdrop",
-          "value": "backdrop",
-          "pathname": "/pages/components/backdrop" 
+          "label": "上传 Upload",
+          "value": "upload",
+          "pathname": "/pages/components/upload" 
         },
 
         {

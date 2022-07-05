@@ -1,3 +1,3 @@
-import ZModal from './Modal'
+import Modal from './Modal'
 
-export default ZModal
+export default Modal

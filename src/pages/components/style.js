@@ -9,6 +9,7 @@ export const MainWrapper = styled.div`
   }
 
   .main-container {
-
+    width: calc(100% - 256px);
+    padding: 16px;
   }
 `

@@ -1,3 +1,3 @@
-import ZDialog from './Dialog'
+import Dialog from './Dialog'
 
-export default ZDialog
+export default Dialog

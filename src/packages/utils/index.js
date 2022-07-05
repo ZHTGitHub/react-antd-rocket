@@ -1,3 +1,3 @@
-import lodash from './lodash'
+import tools from './tools'
 
-export default lodash
+export default tools

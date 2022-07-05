@@ -8,7 +8,7 @@ import 'antd/dist/antd.css'
 import App from './App'
 import Pages from 'pages'
 import Home from 'pages/home'
-import Components, { Backdrop, Dialog, Modal, TextField } from 'pages/components'
+import Components, { Upload, Dialog, Modal, TextField } from 'pages/components'
 
 import Forms from 'pages/forms'
 import Utils from 'pages/utils'
@@ -23,7 +23,7 @@ ReactDOM.render(
         <Route path='pages' element={ <Pages /> }>
           <Route index element={ <Home /> }></Route>
           <Route path='components' element={ <Components /> }>
-            <Route path='backdrop' element={ <Backdrop /> }></Route>
+            <Route path='upload' element={ <Upload /> }></Route>
             <Route path='dialog' element={ <Dialog /> }></Route>
             <Route path='modal' element={ <Modal /> }></Route>
             <Route path='text-field' element={ <TextField /> }></Route>

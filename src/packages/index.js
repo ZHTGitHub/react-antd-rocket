@@ -1,7 +1,8 @@
 export {
   ZDialog, 
   ZModal, 
-  ZTextField
+  ZTextField,
+  ZUpload
 } from './components'
 
 export { default as _ } from './utils'

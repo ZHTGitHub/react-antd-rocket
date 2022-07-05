@@ -1,3 +1,3 @@
-import ZTextField from './TextField'
+import TextField from './TextField'
 
-export default ZTextField
+export default TextField
