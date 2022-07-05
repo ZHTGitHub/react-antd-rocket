@@ -11,6 +11,7 @@ const defaultFileInfo = {
 
 const Upload = (props) => {
   const { action, children, color, defaultValue, disabled, headers, limit, method, name } = props
+  const fileInputRef = React.useRef()
   const [fileInfo, setFileInfo] = React.useState(defaultFileInfo)
   const [images, setImages] = React.useState([])
 
@@ -31,8 +32,7 @@ const Upload = (props) => {
   // ============================= Events =============================
   const previewFile = () => {
     if(!disabled) {
-      const fileInput = document.querySelector('.z-upload input[type=file]')
-      fileInput.click()
+      fileInputRef.current.click()
     }
   }
 
@@ -44,12 +44,7 @@ const Upload = (props) => {
     fileReader.addEventListener('load', (event) => {
       const { error, result: url } = event.target
 
-      if(!error) {
-        setFileInfo({
-          file,
-          url
-        })
-      }
+      !error && setFileInfo({ file, url })
     })
   }
 
@@ -58,8 +53,8 @@ const Upload = (props) => {
     props.onResponse(response) 
   }
 
-  const onPreview = () => {
-
+  const onPreview = (index) => {
+    console.log(index)
   }
 
   const onRemove = (index) => {
@@ -94,7 +89,7 @@ const Upload = (props) => {
                 <span className="z-upload-list-item-actions">
                   <span 
                     className="eye"
-                    onClick={ onPreview }
+                    onClick={ () => onPreview(index) }
                   >eye</span>
 
                   <span 
@@ -117,8 +112,9 @@ const Upload = (props) => {
         >
           <span className="z-upload">
             <input 
-              type="file" 
+              ref={ fileInputRef }
               style={{ display: 'none' }} 
+              type="file" 
               onChange={ readFile }
             />
             {
