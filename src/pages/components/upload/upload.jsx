@@ -34,7 +34,7 @@ const Upload = () => {
         limit={ 10 }
         onChange={ handleChange } 
         onResponse={ handleResponse }
-      />
+      ></ZUpload>
     </div>
   )
 }

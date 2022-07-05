@@ -10,7 +10,7 @@ const defaultFileInfo = {
 }
 
 const Upload = (props) => {
-  const { action, color, defaultValue, disabled, headers, limit, method, name } = props
+  const { action, children, color, defaultValue, disabled, headers, limit, method, name } = props
   const [fileInfo, setFileInfo] = React.useState(defaultFileInfo)
   const [images, setImages] = React.useState([])
 
@@ -55,10 +55,7 @@ const Upload = (props) => {
 
   const uploadFile = async () => {
     const response = await request({ action, file: fileInfo.file, headers, method, name })
-    // props.onResponse(response) 
-    props.onResponse({
-      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
-    })
+    props.onResponse(response) 
   }
 
   const onPreview = () => {
@@ -124,11 +121,14 @@ const Upload = (props) => {
               style={{ display: 'none' }} 
               onChange={ readFile }
             />
-
-            <div>
-              <span className="plus">+</span>
-              <div className="label">Upload</div>
-            </div>
+            {
+              children
+              ||
+              <div>
+                <span className="plus">+</span>
+                <div className="label">Upload</div>
+              </div>
+            }
           </span>
         </UploadSelect>
       </UploadList>
