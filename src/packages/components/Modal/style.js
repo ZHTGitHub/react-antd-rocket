@@ -10,7 +10,7 @@ export const ModalUIWrapper = styled.div`
   width: 100%;
   height: 100%;
   outline: none;
-  z-index: 202;
+  z-index: 9999999;
 
   /* 遮罩 */
   .backdrop {
@@ -29,7 +29,6 @@ export const ModalUIWrapper = styled.div`
   .modal {
     position: absolute;
     padding-top: 24px;
-    /* width: 300px; */
     border-radius: 8px;
     background-color: #f9f9f9;
     z-index: inherit;
@@ -55,10 +54,6 @@ export const ModalUIWrapper = styled.div`
       .slot {
         padding: 16px 24px 0 24px;
       }
-
-      /* .html {
-        padding: 16px 24px 0 24px;
-      } */
     }
 
     /* 操作 */

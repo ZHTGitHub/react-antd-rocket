@@ -13,10 +13,7 @@ const ModalUI = (props) => {
         <ModalUIWrapper>
           <div className='backdrop' onClick={ close }></div>
 
-          <div 
-            className='modal'
-            style={{ width: `${ width }px` }}
-          >
+          <div className='modal' style={{ width: `${ width }px` }}>
             { title ? <div className='title'>{ title }</div> : void 0 }
 
             <div className='content'>
