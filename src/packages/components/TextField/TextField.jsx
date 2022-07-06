@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Input } from 'antd'
+// import { Input } from 'antd'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 // import { formsCreators } from 'store/forms'
@@ -25,10 +25,11 @@ const TextField = (props) => {
   }
 
   return (
-    <Input 
-      value={ value }
-      onChange={ handleChange }
-    />
+    <div></div>
+    // <Input 
+    //   value={ value }
+    //   onChange={ handleChange }
+    // />
   )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'antd'
+// import { Button } from 'antd'
 
 const Dialog = () => {
 
@@ -9,9 +9,9 @@ const Dialog = () => {
 
   return (
     <div className='dialog'>
-        <Button 
-          onClick={ openDialog }
-        >OPEN DIALOG</Button>
+      {/* <Button 
+        onClick={ openDialog }
+      >OPEN DIALOG</Button> */}
     </div>
   )
 }

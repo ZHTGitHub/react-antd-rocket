@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { Button } from 'antd'
-import { ZModal, ZDialog, ZTextField } from 'packages/components'
+import { ZModal } from 'packages/components'
 import lodash from 'packages/utils'
 import { connect } from 'react-redux'
 
@@ -34,26 +33,9 @@ const HomePage = (props) => {
   return (
     <div className='home'>
       <div className='home'>
-        <Button 
+        <button 
           onClick={ handleOpen }
-        >OPEN MODAL</Button>
-
-        <ZTextField 
-          formId={ formId }
-          formKey='firstName'
-        ></ZTextField>
-
-        <ZTextField 
-          formId={ formId }
-          formKey='lastName'
-        ></ZTextField>
-
-
-        <ZDialog 
-          ref={ dialogRef }
-        >
-          233
-        </ZDialog>
+        >OPEN MODAL</button>
       </div>
     </div>
   )

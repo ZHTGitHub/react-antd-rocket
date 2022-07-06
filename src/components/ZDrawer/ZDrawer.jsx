@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { DrawerWrapper } from './style'
-import { Drawer } from 'antd'
+// import { Drawer } from 'antd'
 import { drawerCreators } from '../../store/components'
 
 class ZDrawer extends React.Component {
@@ -10,11 +10,11 @@ class ZDrawer extends React.Component {
 
     return (
       <DrawerWrapper>
-        <Drawer 
+        {/* <div 
           placement='right'
           visible={ visible }
           onClose={ () => handleToggle(visible) }
-        ></Drawer>
+        ></div> */}
       </DrawerWrapper>
     )
   }

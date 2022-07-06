@@ -2,7 +2,7 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 import request from './request'
 import { UploadWrapper, UploadList, UploadListContainer, UploadSelect } from './styled'
-import tools from 'packages/utils'
+import { _ } from 'packages'
 
 const defaultFileInfo = {
   file: void 0,
@@ -58,7 +58,7 @@ const Upload = (props) => {
   }
 
   const onRemove = (index) => {
-    const newImages = tools.deepClone(images)
+    const newImages = _.deepClone(images)
 
     newImages.splice(index, 1)
 

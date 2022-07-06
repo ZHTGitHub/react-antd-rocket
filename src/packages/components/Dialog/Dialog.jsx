@@ -1,5 +1,5 @@
 import React, { useState, useImperativeHandle } from 'react'
-import { Modal } from 'antd'
+// import { Modal } from 'antd'
 
 const Dialog = (props, ref) => {
   const [visible, setVisible] = useState(false)
@@ -20,13 +20,14 @@ const Dialog = (props, ref) => {
   })) 
 
   return (
-    <Modal 
-      title={ props.title }
-      visible={ visible }
-      onCancel={ close }
-    >
-      { props.children }
-    </Modal>
+    <div></div>
+    // <Modal 
+    //   title={ props.title }
+    //   visible={ visible }
+    //   onCancel={ close }
+    // >
+    //   { props.children }
+    // </Modal>
   )
 }
 

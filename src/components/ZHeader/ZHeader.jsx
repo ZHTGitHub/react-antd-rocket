@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Row, Col } from 'antd'
 import { HeaderWrapper } from './style'
 import { headerCreators } from '../../store/components'
 
@@ -38,12 +37,12 @@ const ZHeader = (props) => {
 
   return (
     <HeaderWrapper>
-      <Row>
-        <Col className='z-row' xs={ 24 } sm={ 24 } md={ 6 } lg={ 6 } xl={ 5 } xxl={ 4 }>
+      <div>
+        <div className='z-row'>
           <h1 onClick={ navigateHome }>React Antd Rocket</h1>
-        </Col>
+        </div>
 
-        <Col className='menu-row z-row' xs={ 0 } sm={ 0 } md={ 18 } lg={ 18 } xl={ 19 } xxl={ 20 }>
+        <div className='menu-row z-row'>
           <div className="search-box">
           </div>
 
@@ -58,8 +57,8 @@ const ZHeader = (props) => {
               ))
             }
           </ul>
-        </Col>
-      </Row>
+        </div>
+      </div>
     </HeaderWrapper>
   )
 }

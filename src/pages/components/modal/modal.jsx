@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button, Input } from 'antd'
 import { ZModal, _ } from 'packages'
 // import { ZModal, _ } from 'react-antd-rocket'
 
@@ -11,7 +10,7 @@ const Modal = () => {
     ZModal.confirm({
       title: '标题',
       content: '代码是写给人看的',
-      slot: <Input></Input>,  
+      slot: <input></input>,  
       html: '<h1>123</h1>',
       width: 320
     })
@@ -19,9 +18,9 @@ const Modal = () => {
 
   return (
     <div className='modal'>
-      <Button 
+      <button 
         onClick={ openModal }
-      >OPEN MODAL</Button>
+      >OPEN MODAL</button>
     </div>
   )
 }

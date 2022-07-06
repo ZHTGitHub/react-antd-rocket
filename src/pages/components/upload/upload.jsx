@@ -1,5 +1,5 @@
 import React from 'react'
-import { ZUpload } from 'packages'
+// import { ZUpload } from 'packages'
 
 const Upload = () => {
   const [list, setList] = React.useState([
@@ -28,13 +28,13 @@ const Upload = () => {
 
   return (
     <div className='upload'>
-      <ZUpload 
+      {/* <ZUpload 
         action=""
         defaultValue={ list }
         limit={ 10 }
         onChange={ handleChange } 
         onResponse={ handleResponse }
-      ></ZUpload>
+      ></ZUpload> */}
     </div>
   )
 }
