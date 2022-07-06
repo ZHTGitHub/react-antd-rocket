@@ -56,9 +56,9 @@ export const ModalUIWrapper = styled.div`
         padding: 16px 24px 0 24px;
       }
 
-      .html {
+      /* .html {
         padding: 16px 24px 0 24px;
-      }
+      } */
     }
 
     /* 操作 */

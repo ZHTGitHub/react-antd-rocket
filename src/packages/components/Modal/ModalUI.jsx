@@ -3,7 +3,7 @@ import { ModalUIWrapper } from './style'
 
 const ModalUI = (props) => {
   const { visible, options, close, handleCancel, handleConfirm } = props
-  const { title, content, slot, __html, width, isAlert } = options
+  const { title, content, slot, html, width, isAlert } = options
 
   return (
     <React.Fragment>
@@ -15,75 +15,27 @@ const ModalUI = (props) => {
 
           <div 
             className='modal'
-            style={{
-              width: `${ width }px`
-            }}
+            style={{ width: `${ width }px` }}
           >
-            {
-              title
-              ?
-              <div className='title'>
-                { title }
-              </div>
-              : 
-              null
-            }
+            { title ? <div className='title'>{ title }</div> : void 0 }
 
             <div className='content'>
-              {
-                content
-                ?
-                <div className='message'>
-                  { content }
-                </div>
-                :
-                null
-              }
+              { content ? <div className='message'>{ content }</div> : void 0 }
 
-              {
-                slot
-                ?
-                <div className='slot'>
-                  { slot }
-                </div>
-                :
-                null
-              }
+              { slot ? <div className='slot'>{ slot }</div> : void 0 }
 
-              {
-                __html
-                ? 
-                <div 
-                  className='html' 
-                  dangerouslySetInnerHTML={{ __html }}
-                >
-                </div>
-                :
-                null
-              }
+              { html ? <div dangerouslySetInnerHTML={{ __html: html }}></div> : void 0 }
             </div>
 
             <div className={ !isAlert ? 'confirm actions' : 'actions' }>
-              {
-                !isAlert
-                ?
-                <div 
-                  className='cancel' 
-                  onClick={ handleCancel }
-                >取消</div>
-                :
-                null
-              }
+              { !isAlert ? <div className='cancel' onClick={ handleCancel }>取消</div> : void 0 }
 
-              <div 
-                className='confirm' 
-                onClick={ handleConfirm }
-              >确认</div>
+              <div className='confirm' onClick={ handleConfirm }>确认</div>
             </div>
           </div>
         </ModalUIWrapper>
         :
-        null
+        void 0
       }
     </React.Fragment>
   )
