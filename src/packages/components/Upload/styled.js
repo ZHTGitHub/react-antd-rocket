@@ -22,6 +22,7 @@ export const UploadListContainer = styled.div`
 
   .z-upload-list-item {
     position: relative;
+    box-sizing: border-box;
     height: 100%;
     margin: 0;
     padding: 8px;

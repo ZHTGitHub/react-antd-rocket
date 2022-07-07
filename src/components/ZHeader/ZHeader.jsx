@@ -36,28 +36,23 @@ const ZHeader = (props) => {
   }
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper className="z-flex justify-between">
       <div>
-        <div className='z-row'>
-          <h1 onClick={ navigateHome }>React Antd Rocket</h1>
-        </div>
+        <h1 onClick={ navigateHome }>React Antd Rocket</h1>
+      </div>
 
-        <div className='menu-row z-row'>
-          <div className="search-box">
-          </div>
-
-          <ul className='z-menu'>
-            {
-              items.map(item => (
-                <li 
-                  key={ item.value }
-                  className={ item.value === selected ? 'actived z-menu-item' : 'z-menu-item' }
-                  onClick={ () => switchTabs(item) }
-                >{ item.label }</li>
-              ))
-            }
-          </ul>
-        </div>
+      <div className='menu-row z-row'>
+        <ul className='z-menu'>
+          {
+            items.map(item => (
+              <li 
+                key={ item.value }
+                className={ item.value === selected ? 'actived z-menu-item' : 'z-menu-item' }
+                onClick={ () => switchTabs(item) }
+              >{ item.label }</li>
+            ))
+          }
+        </ul>
       </div>
     </HeaderWrapper>
   )

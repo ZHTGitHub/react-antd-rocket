@@ -1,1 +1,0 @@
-export const DRAWER_TOGGLE_VISIBLE = 'drawer_toggle_visible'

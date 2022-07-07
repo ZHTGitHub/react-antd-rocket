@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import ModalUI from './ModalUI'
 
 const defaultOptions = {
@@ -82,4 +82,7 @@ if(!el) {
   document.body.append(el)
 }
 
-ReactDOM.render(<Modal />, el)
+const container = document.getElementById('z-dialog')
+const root = createRoot(container)
+
+root.render(<Modal />)
