@@ -17,7 +17,7 @@ const Upload = (props) => {
 
   // ============================= Effect =============================
   React.useEffect(() => {
-    if(fileInfo.file) {
+    if(fileInfo.file && props.onChange) {
       props.onChange(fileInfo)
       uploadFile()
     }
@@ -50,7 +50,9 @@ const Upload = (props) => {
 
   const uploadFile = async () => {
     const response = await request({ action, file: fileInfo.file, headers, method, name })
-    props.onResponse(response) 
+    if(props.onResponse) {
+      props.onResponse(response) 
+    }
   }
 
   const onPreview = (index) => {

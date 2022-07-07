@@ -21,9 +21,7 @@ const Upload = () => {
   }
 
   const handleResponse = (value) => {
-    console.log(value)
     setList([...list, value])
-
   }
 
   return (
@@ -34,7 +32,8 @@ const Upload = () => {
         limit={ 10 }
         onChange={ handleChange } 
         onResponse={ handleResponse }
-      ></ZUpload>
+      >
+      </ZUpload>
     </div>
   )
 }
