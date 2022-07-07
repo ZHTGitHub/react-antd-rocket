@@ -10,7 +10,7 @@ const defaultFileInfo = {
 }
 
 const Upload = (props) => {
-  const { action, children, color, defaultValue, disabled, headers, limit, method, name } = props
+  const { action, children, color, defaultValue, disabled, headers, limit, method, name, size } = props
   const fileInputRef = React.useRef()
   const [fileInfo, setFileInfo] = React.useState(defaultFileInfo)
   const [images, setImages] = React.useState([])
@@ -72,7 +72,10 @@ const Upload = (props) => {
       <UploadList>
         {
           images?.map((value, index) => (
-            <UploadListContainer key={ `uploadListContainer${ index }` }>
+            <UploadListContainer 
+              key={ `uploadListContainer${ index }` }
+              size={ size }
+            >
               <div className="z-upload-list-item">
                 <div className="z-upload-list-item-info">
                   <span className="z-upload-span">
@@ -107,6 +110,7 @@ const Upload = (props) => {
         <UploadSelect 
           color={ color }
           disabled={ disabled }
+          size={ size }
           style={{
             display: !limit || (images.length < limit) ? 'inline-block' : 'none'
           }}
@@ -144,14 +148,16 @@ Upload.propTypes = {
   method: PropTypes.oneOf(['POST', 'GET']),
   name: PropTypes.string,
   onChange: PropTypes.func,
-  onResponse: PropTypes.func
+  onResponse: PropTypes.func,
+  size: PropTypes.oneOf(['small', 'medium'])
 }
 
 Upload.defaultProps = {
   color: '#1976d2',
   disabled: false,
   method: 'POST',
-  name: 'file'
+  name: 'file',
+  size: 'medium'
 }
 
 export default Upload

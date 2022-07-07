@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 
+const mediumSize = '104px'
+const smallSize = '84px'
+
 export const UploadWrapper = styled.div`
 
 `
@@ -15,8 +18,8 @@ export const UploadList = styled.div`
 
 export const UploadListContainer = styled.div`
   display: inline-block;
-  width: 104px;
-  height: 104px;
+  width: ${ ({ size }) => size === 'medium' ? mediumSize : smallSize };
+  height: ${ ({ size }) => size === 'medium' ? mediumSize : smallSize };
   margin: 0 8px 8px 0;
   vertical-align: top;
 
@@ -25,7 +28,7 @@ export const UploadListContainer = styled.div`
     box-sizing: border-box;
     height: 100%;
     margin: 0;
-    padding: 8px;
+    padding: ${ ({ size }) => size === 'medium' ? '8px' : '6px' };
     border: 1px solid #d9d9d9;
     border-radius: 2px;
 
@@ -92,8 +95,8 @@ export const UploadListContainer = styled.div`
 
 export const UploadSelect = styled.div`
   box-sizing: border-box;
-  width: 104px;
-  height: 104px;
+  width: ${ ({ size }) => size === 'medium' ? mediumSize : smallSize };
+  height: ${ ({ size }) => size === 'medium' ? mediumSize : smallSize };
   margin: 0 8px 8px 0; 
   border: 1px dashed #d9d9d9;
   border-radius: 2px;
