@@ -1,5 +1,5 @@
 import React from 'react'
-import { ModalUIWrapper } from './style'
+import { ModalUIWrapper } from './styled'
 
 const ModalUI = (props) => {
   const { visible, options, close, handleCancel, handleConfirm } = props
@@ -16,13 +16,11 @@ const ModalUI = (props) => {
           <div className='modal' style={{ width: `${ width }px` }}>
             { title ? <div className='title'>{ title }</div> : void 0 }
 
-            <div className='content'>
-              { content ? <div className='message'>{ content }</div> : void 0 }
+            { content ? <div className='content'>{ content }</div> : void 0 }
 
-              { slot ? <div className='slot'>{ slot }</div> : void 0 }
+            { slot ? slot : void 0 }
 
-              { html ? <div dangerouslySetInnerHTML={{ __html: html }}></div> : void 0 }
-            </div>
+            { html ? <div dangerouslySetInnerHTML={{ __html: html }}></div> : void 0 }
 
             <div className={ !isAlert ? 'confirm actions' : 'actions' }>
               { !isAlert ? <div className='cancel' onClick={ handleCancel }>取消</div> : void 0 }

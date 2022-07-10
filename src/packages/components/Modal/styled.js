@@ -43,17 +43,9 @@ export const ModalUIWrapper = styled.div`
 
     /* 内容 */
     .content {
-      padding-bottom: 24px;
-
-      .message {
-        padding: 4px 24px 0 24px;
-        color: #646566;
-        text-align: center;
-      }
-
-      .slot {
-        padding: 16px 24px 0 24px;
-      }
+      padding: 24px;
+      color: #646566;
+      text-align: center;
     }
 
     /* 操作 */
