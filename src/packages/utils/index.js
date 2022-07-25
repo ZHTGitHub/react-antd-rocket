@@ -1,3 +1,8 @@
+import { sessionStorage, localStorage } from './storage'
 import tools from './tools'
 
-export default tools
+export {
+  sessionStorage,
+  localStorage,
+  tools
+}

@@ -1,7 +1,3 @@
-export {
-  ZModal, 
-  ZUpload
-} from './components'
+export { sessionStorage, localStorage, tools } from './utils'
 
-export { default as _ } from './utils'
-
+export { ZModal, ZUpload } from './components' 
