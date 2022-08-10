@@ -10,7 +10,7 @@ const defaultFileInfo = {
 }
 
 const Upload = (props) => {
-  const { action, children, color, defaultValue, disabled, headers, limit, method, name, size } = props
+  const { action, children, className, color, defaultValue, disabled, headers, limit, method, name, size } = props
   const fileInputRef = React.useRef()
   const [fileInfo, setFileInfo] = React.useState(defaultFileInfo)
   const [images, setImages] = React.useState([])
@@ -68,7 +68,7 @@ const Upload = (props) => {
   }
 
   return (
-    <UploadWrapper>
+    <UploadWrapper className={ className }>
       <UploadList>
         {
           images?.map((value, index) => (
