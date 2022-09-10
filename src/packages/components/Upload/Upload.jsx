@@ -10,7 +10,7 @@ const defaultFileInfo = {
 }
 
 const Upload = (props) => {
-  const { action, children, className, color, defaultValue, disabled, headers, limit, method, name, size } = props
+  const { action, children, className, color, data, defaultValue, disabled, headers, maxCount, method, name, size } = props
   const fileInputRef = React.useRef()
   const [fileInfo, setFileInfo] = React.useState(defaultFileInfo)
   const [images, setImages] = React.useState([])
@@ -36,9 +36,12 @@ const Upload = (props) => {
     }
   }
 
+  // 读取文件信息
   const readFile = (event) => {
     const file = event.target.files[0]
+    // const url = URL.createObjectURL(file)
     const fileReader = new FileReader()
+
     fileReader.readAsDataURL(file)
 
     fileReader.addEventListener('load', (event) => {
@@ -48,17 +51,28 @@ const Upload = (props) => {
     })
   }
 
+  // 上传文件
   const uploadFile = async () => {
-    const response = await request({ action, file: fileInfo.file, headers, method, name })
+    const response = await request({ 
+      action, 
+      data,
+      file: fileInfo.file, 
+      headers, 
+      method, 
+      name 
+    })
+    
     if(props.onResponse) {
       props.onResponse(response) 
     }
   }
 
+  // 预览
   const onPreview = (index) => {
     console.log(index)
   }
 
+  // 删除
   const onRemove = (index) => {
     const newImages = tools.deepClone(images)
 
@@ -112,7 +126,7 @@ const Upload = (props) => {
           disabled={ disabled }
           size={ size }
           style={{
-            display: !limit || (images.length < limit) ? 'inline-block' : 'none'
+            display: !maxCount || (images.length < maxCount) ? 'inline-block' : 'none'
           }}
           onClick={ previewFile }
         >
@@ -139,16 +153,31 @@ const Upload = (props) => {
 }
 
 Upload.propTypes = {
+  // 上传的地址
   action: PropTypes.string.isRequired,
+  // 主题
   color: PropTypes.string,
+  // 上传所需额外参数
+  data: PropTypes.object,
+  // 默认值
   defaultValue: PropTypes.arrayOf(PropTypes.object),
+  // 是否禁用
   disabled: PropTypes.bool,
+  // 设置上传的请求头部
   headers: PropTypes.object,
-  limit: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  // 限制上传数量
+  maxCount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  // 限制上传大小
+  maxSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  // 上传请求的 http method
   method: PropTypes.oneOf(['POST', 'GET']),
+  // 发到后台的文件参数名
   name: PropTypes.string,
+  // 上传文件改变时的状态
   onChange: PropTypes.func,
+  // 后台返回的结果
   onResponse: PropTypes.func,
+  // 组件大小
   size: PropTypes.oneOf(['small', 'medium'])
 }
 

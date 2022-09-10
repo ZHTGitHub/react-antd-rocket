@@ -29,7 +29,7 @@ const Upload = () => {
       <ZUpload 
         action=""
         defaultValue={ list }
-        limit={ 10 }
+        maxCount={ 10 }
         size="small"
         onChange={ handleChange } 
         onResponse={ handleResponse }

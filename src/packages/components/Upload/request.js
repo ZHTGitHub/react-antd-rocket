@@ -1,5 +1,6 @@
 const request = ({
   action,
+  data,
   file,
   headers,
   method,
@@ -7,6 +8,12 @@ const request = ({
 }) => {
   const formData = new FormData()
   formData.append(name, file)
+
+  if(data) {
+    for(let key in data) {
+      formData.append(key, data[key])
+    }
+  }
 
   return new Promise((resolve) => {
     fetch(action, {
