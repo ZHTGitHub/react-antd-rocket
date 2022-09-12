@@ -1,18 +1,20 @@
 import React from 'react'
 import { ZUpload } from 'packages'
 
+const origin = 'https://zenghaitao.oss-cn-guangzhou.aliyuncs.com'
+
 const Upload = () => {
   const [list, setList] = React.useState([
   {
-    url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
+    url: 'topics/62dcf70ad6e4efffdcf6efc9-%E5%8A%B1%E5%BF%97%E6%96%87%E6%A1%88.jpg'
   },
 
   {
-    url: 'https://cdn.vuetifyjs.com/images/john.jpg'
+    url: 'topics/62dcf70ad6e4efffdcf6efc9-%E5%BD%A9%E8%99%B9%E5%B1%81.jpg'
   },
 
   {
-    url: 'https://avatars0.githubusercontent.com/u/9064066?v=4&s=460'
+    url: 'topics/62dcf70ad6e4efffdcf6efc9-%E5%BD%B1%E8%A7%86%E6%96%87%E6%A1%88.jpg'
   }
 ])
 
@@ -30,6 +32,7 @@ const Upload = () => {
         action=""
         defaultValue={ list }
         maxCount={ 10 }
+        origin={ origin }
         size="small"
         onChange={ handleChange } 
         onResponse={ handleResponse }

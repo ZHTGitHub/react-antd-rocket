@@ -10,7 +10,7 @@ const defaultFileInfo = {
 }
 
 const Upload = (props) => {
-  const { action, children, className, color, data, defaultValue, disabled, headers, maxCount, method, name, size } = props
+  const { action, children, className, color, data, defaultValue, disabled, headers, maxCount, method, name, origin, size } = props
   const fileInputRef = React.useRef()
   const [fileInfo, setFileInfo] = React.useState(defaultFileInfo)
   const [images, setImages] = React.useState([])
@@ -95,11 +95,11 @@ const Upload = (props) => {
                   <span className="z-upload-span">
                     <a 
                       className="z-upload-list-item-thumbnail"
-                      href={ value.url }
+                      href={ origin ? `${ origin }/${ value.url }` : value.url }
                     >
                       <img 
                         className="z-upload-list-item-image"
-                        src={ value.url }
+                        src={ origin ? `${ origin }/${ value.url }` : value.url }
                       />
                     </a>
                   </span>
@@ -173,6 +173,8 @@ Upload.propTypes = {
   method: PropTypes.oneOf(['POST', 'GET']),
   // 发到后台的文件参数名
   name: PropTypes.string,
+  // URL 基础地址
+  origin: PropTypes.string,
   // 上传文件改变时的状态
   onChange: PropTypes.func,
   // 后台返回的结果
