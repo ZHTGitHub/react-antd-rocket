@@ -11,7 +11,7 @@ const defaultFileInfo = {
 }
 
 const Upload = (props) => {
-  const { action, children, className, color, data, defaultValue, disabled, headers, maxCount, method, name, origin, size } = props
+  const { action, children, className, color, data, defaultValue, disabled, headers, maxCount, maxSize, method, name, origin, size } = props
   const fileInputRef = React.useRef()
   const [fileInfo, setFileInfo] = React.useState(defaultFileInfo)
   const [images, setImages] = React.useState([])
@@ -20,7 +20,7 @@ const Upload = (props) => {
   React.useEffect(() => {
     if(fileInfo.file && props.onChange) {
       props.onChange(fileInfo)
-      uploadFile()
+      !fileInfo.reject && uploadFile()
     }
   }, [fileInfo.file])
 
@@ -43,12 +43,19 @@ const Upload = (props) => {
     // const url = URL.createObjectURL(file)
     const fileReader = new FileReader()
 
+    const fileSize = file.size / 1024
+
+    if(maxSize && fileSize > maxSize) {
+      setFileInfo({ reject: true, file, maxSize })
+      return
+    }
+
     fileReader.readAsDataURL(file)
 
     fileReader.addEventListener('load', (event) => {
-      const { error, result: url } = event.target
+      const { error } = event.target
 
-      !error && setFileInfo({ file, url })
+      !error && setFileInfo({ reject: false, file })
     })
   }
 

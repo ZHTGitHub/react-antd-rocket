@@ -32,6 +32,7 @@ const Upload = () => {
         action=""
         defaultValue={ list }
         maxCount={ 10 }
+        maxSize={ 50 }
         origin={ origin }
         size="small"
         onChange={ handleChange } 
