@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import request from './request'
 import { UploadWrapper, UploadList, UploadListContainer, UploadSelect } from './styled'
 import tools from '../../utils/tools'
+import '../../icons/iconfont.css'
 
 const defaultFileInfo = {
   file: void 0,
