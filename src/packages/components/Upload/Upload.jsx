@@ -107,14 +107,14 @@ const Upload = (props) => {
 
                 <span className="z-upload-list-item-actions">
                   <span 
-                    className="eye"
+                    className="icon icon-eye"
                     onClick={ () => onPreview(index) }
-                  >eye</span>
+                  ></span>
 
                   <span 
-                    className="delete"
+                    className="icon icon-trash"
                     onClick={ () => onRemove(index) }
-                  >del</span>
+                  ></span>
                 </span>
               </div>
             </UploadListContainer>

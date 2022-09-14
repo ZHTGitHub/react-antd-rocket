@@ -80,10 +80,9 @@ export const UploadListContainer = styled.div`
       transform: translate(-50%, -50%);
       transition: all .3s;
 
-      .eye, .delete {
-        width: 16px;
+      .icon {
         margin: 0 4px;
-        font-size: 16px;
+        font-size: 18px;
         color: #ffffffd9;
         cursor: pointer;
         z-index: 10;
