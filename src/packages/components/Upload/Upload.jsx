@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import request from './request'
 import { UploadWrapper, UploadList, UploadListContainer, UploadSelect } from './styled'
 import tools from '../../utils/tools'
-import '../../icons/iconfont.css'
+// import '../../icons/iconfont.css'
 
 const defaultFileInfo = {
   file: void 0,
@@ -110,12 +110,12 @@ const Upload = (props) => {
                   <span 
                     className="icon icon-eye"
                     onClick={ () => onPreview(index) }
-                  ></span>
+                  >eye</span>
 
                   <span 
                     className="icon icon-trash"
                     onClick={ () => onRemove(index) }
-                  ></span>
+                  >del</span>
                 </span>
               </div>
             </UploadListContainer>
