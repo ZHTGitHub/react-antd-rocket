@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Outlet } from 'react-router-dom'
-import { MainLayout } from 'layouts'
+import MainLayout from '../layouts/MainLayout'
 
 const Pages = () => {
   return (

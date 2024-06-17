@@ -6,9 +6,57 @@
       "value": "dataInput",
       "children": [
         { 
-          "label": "Text field 文本框",
-          "value": "text-field",
-          "pathname": "/pages/components/text-field" 
+          "label": "Checkbox 多选框",
+          "value": "checkboxDemo",
+          "pathname": "/pages/components/checkbox_demo" 
+        },
+
+        { 
+          "label": "DatePicker 日期选择框",
+          "value": "datePickerDemo",
+          "pathname": "/pages/components/date_picker_demo" 
+        },
+
+        { 
+          "label": "Form 表单",
+          "value": "formDemo",
+          "pathname": "/pages/components/form_demo" 
+        },
+
+        { 
+          "label": "Input 输入框",
+          "value": "inputDemo",
+          "pathname": "/pages/components/input_demo" 
+        },
+
+        { 
+          "label": "InputNumber 数字输入框",
+          "value": "inputNumberDemo",
+          "pathname": "/pages/components/input_number_demo" 
+        },
+
+        { 
+          "label": "Radio 单选框",
+          "value": "radioDemo",
+          "pathname": "/pages/components/radio_demo" 
+        },
+
+        { 
+          "label": "Select 下拉框",
+          "value": "selectDemo",
+          "pathname": "/pages/components/select_demo" 
+        },
+
+        { 
+          "label": "Switch 开关",
+          "value": "switchDemo",
+          "pathname": "/pages/components/switch_demo" 
+        },
+
+        {
+          "label": "上传 Upload",
+          "value": "uploadDemo",
+          "pathname": "/pages/components/upload_demo" 
         }
       ]
     },
@@ -18,21 +66,15 @@
       "value": "feedback",
       "children": [
         {
-          "label": "上传 Upload",
-          "value": "upload",
-          "pathname": "/pages/components/upload" 
-        },
-
-        {
           "label": "对话框 Dialog",
-          "value": "dialog",
-          "pathname": "/pages/components/dialog" 
+          "value": "dialogDemo",
+          "pathname": "/pages/components/dialog_demo" 
         },
 
         {
           "label": "弹出框 Modal",
-          "value": "modal",
-          "pathname": "/pages/components/modal" 
+          "value": "modalDemo",
+          "pathname": "/pages/components/modal_demo" 
         }
       ]
     }

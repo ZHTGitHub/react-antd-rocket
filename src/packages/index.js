@@ -1,3 +1,6 @@
 export { sessionStorage, localStorage, tools } from './utils'
 
-export { ZModal, ZUpload } from './components' 
+export { 
+  ZInput,
+  ZModal, ZUpload, 
+} from './components' 

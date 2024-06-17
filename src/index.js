@@ -7,7 +7,10 @@ import "./index.css";
 import App from "./App";
 import Pages from "pages";
 import Home from "pages/home";
-import Components, { Upload, Dialog, Modal, TextField } from "pages/components";
+import Components, { 
+  InputDemo, 
+  DialogDemo, ModalDemo, UploadDemo,
+} from "pages/components";
 
 import Forms from "pages/forms";
 
@@ -24,10 +27,10 @@ root.render(
           <Route index element={<Home />}></Route>
 
           <Route path="components" element={<Components />}>
-            <Route path="upload" element={<Upload />}></Route>
-            <Route path="dialog" element={<Dialog />}></Route>
-            <Route path="modal" element={<Modal />}></Route>
-            <Route path="text-field" element={<TextField />}></Route>
+            <Route path="upload_demo" element={<UploadDemo />}></Route>
+            <Route path="dialog_demo" element={<DialogDemo />}></Route>
+            <Route path="modal_demo" element={<ModalDemo />}></Route>
+            <Route path="input_demo" element={<InputDemo />}></Route>
           </Route>
 
           <Route path="forms" element={<Forms />}></Route>

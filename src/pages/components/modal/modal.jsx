@@ -1,5 +1,5 @@
 import React from "react";
-import { ZModal, _ } from "packages";
+import { ZModal } from "../../../packages";
 
 const Modal = () => {
   const openModal = () => {

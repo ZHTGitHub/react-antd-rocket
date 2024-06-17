@@ -1,2 +1,9 @@
-export { default as ZModal } from './Modal'
-export { default as ZUpload } from './Upload'
+import ZInput from "./input";
+import ZModal from "./modal";
+import ZUpload from "./upload";
+
+export {
+  ZInput,
+  ZModal,
+  ZUpload,
+}

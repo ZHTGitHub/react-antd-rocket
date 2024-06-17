@@ -1,15 +1,17 @@
 import Components from './components'
 
-import Dialog from './dialog'
-import Modal from './modal'
-import TextField from './textField'
-import Upload from './upload'
+import InputDemo from './input'
+
+import DialogDemo from './dialog'
+import ModalDemo from './modal'
+import UploadDemo from './upload'
 
 export { 
-  Dialog,
-  Modal,
-  TextField,
-  Upload
+  InputDemo,
+  
+  DialogDemo,
+  ModalDemo,
+  UploadDemo,
 }
 
 export default Components

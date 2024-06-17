@@ -1,5 +1,5 @@
 import React from 'react'
-import { ZUpload } from 'packages'
+import { ZUpload } from '../../../packages'
 
 const origin = 'https://zenghaitao.oss-cn-guangzhou.aliyuncs.com'
 

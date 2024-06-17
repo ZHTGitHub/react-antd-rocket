@@ -1,12 +1,12 @@
 import * as React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import request from "./request";
 import {
   UploadWrapper,
   UploadList,
   UploadListContainer,
   UploadSelect,
-} from "./styled";
+} from "./style/styled";
 import tools from "../../utils/tools";
 // import '../../icons/iconfont.css'
 
@@ -178,43 +178,43 @@ const Upload = (props) => {
   );
 };
 
-Upload.propTypes = {
-  // 上传的地址
-  action: PropTypes.string.isRequired,
-  // 主题
-  color: PropTypes.string,
-  // 上传所需额外参数
-  data: PropTypes.object,
-  // 默认值
-  defaultValue: PropTypes.arrayOf(PropTypes.object),
-  // 是否禁用
-  disabled: PropTypes.bool,
-  // 设置上传的请求头部
-  headers: PropTypes.object,
-  // 限制上传数量
-  maxCount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  // 限制上传大小
-  maxSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  // 上传请求的 http method
-  method: PropTypes.oneOf(["POST", "GET"]),
-  // 发到后台的文件参数名
-  name: PropTypes.string,
-  // URL 基础地址
-  origin: PropTypes.string,
-  // 上传文件改变时的状态
-  onChange: PropTypes.func,
-  // 后台返回的结果
-  onResponse: PropTypes.func,
-  // 组件大小
-  size: PropTypes.oneOf(["small", "medium"]),
-};
+// Upload.propTypes = {
+//   // 上传的地址
+//   action: PropTypes.string.isRequired,
+//   // 主题
+//   color: PropTypes.string,
+//   // 上传所需额外参数
+//   data: PropTypes.object,
+//   // 默认值
+//   defaultValue: PropTypes.arrayOf(PropTypes.object),
+//   // 是否禁用
+//   disabled: PropTypes.bool,
+//   // 设置上传的请求头部
+//   headers: PropTypes.object,
+//   // 限制上传数量
+//   maxCount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+//   // 限制上传大小
+//   maxSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+//   // 上传请求的 http method
+//   method: PropTypes.oneOf(["POST", "GET"]),
+//   // 发到后台的文件参数名
+//   name: PropTypes.string,
+//   // URL 基础地址
+//   origin: PropTypes.string,
+//   // 上传文件改变时的状态
+//   onChange: PropTypes.func,
+//   // 后台返回的结果
+//   onResponse: PropTypes.func,
+//   // 组件大小
+//   size: PropTypes.oneOf(["small", "medium"]),
+// };
 
-Upload.defaultProps = {
-  color: "#1976d2",
-  disabled: false,
-  method: "POST",
-  name: "file",
-  size: "medium",
-};
+// Upload.defaultProps = {
+//   color: "#1976d2",
+//   disabled: false,
+//   method: "POST",
+//   name: "file",
+//   size: "medium",
+// };
 
 export default Upload;

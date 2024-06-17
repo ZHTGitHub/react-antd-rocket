@@ -1,5 +1,5 @@
 import React from 'react'
-import { ModalUIWrapper } from './styled'
+import { ModalUIWrapper } from './style/styled'
 
 const ModalUI = (props) => {
   const { visible, options, close, handleCancel, handleConfirm } = props
