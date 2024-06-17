@@ -1,7 +1,9 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
   position: relative;
+  display: flex;
+  justify-content: space-between;
   height: 64px;
   padding: 0 40px;
   background-color: #fff;
@@ -34,7 +36,7 @@ export const HeaderWrapper = styled.div`
         padding: 0 12px;
         line-height: 64px;
         cursor: pointer;
-        transition: color .3s;
+        transition: color 0.3s;
 
         &.actived {
           color: #2196f3;
@@ -49,7 +51,7 @@ export const HeaderWrapper = styled.div`
           left: 12px;
           right: 12px;
           border-bottom: 2px solid transparent;
-          transition: border-color .3s cubic-bezier(.645,.045,.355,1);
+          transition: border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
         }
 
         &:hover {
@@ -69,4 +71,4 @@ export const HeaderWrapper = styled.div`
       line-height: 64px;
     }
   }
-`
+`;

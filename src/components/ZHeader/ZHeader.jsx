@@ -36,7 +36,7 @@ const ZHeader = (props) => {
   };
 
   return (
-    <HeaderWrapper className="z-flex justify-between">
+    <HeaderWrapper>
       <div>
         <h1 onClick={navigateHome}>React Antd Rocket</h1>
       </div>

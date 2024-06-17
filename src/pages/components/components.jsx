@@ -1,14 +1,14 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from "react";
+import { Outlet } from "react-router-dom";
 
-import { MainWrapper } from './style'
+import { MainWrapper } from "./style";
 
 const Components = () => {
   return (
-    <MainWrapper className="z-flex">
+    <MainWrapper>
       <Outlet />
     </MainWrapper>
-  )
-}
+  );
+};
 
-export default Components
+export default Components;
