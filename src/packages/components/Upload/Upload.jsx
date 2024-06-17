@@ -1,164 +1,182 @@
-import * as React from 'react'
-import PropTypes from 'prop-types'
-import request from './request'
-import { UploadWrapper, UploadList, UploadListContainer, UploadSelect } from './styled'
-import tools from '../../utils/tools'
+import * as React from "react";
+import PropTypes from "prop-types";
+import request from "./request";
+import {
+  UploadWrapper,
+  UploadList,
+  UploadListContainer,
+  UploadSelect,
+} from "./styled";
+import tools from "../../utils/tools";
 // import '../../icons/iconfont.css'
 
 const defaultFileInfo = {
   file: void 0,
-  url: ''
-}
+  url: "",
+};
 
 const Upload = (props) => {
-  const { action, children, className, color, data, defaultValue, disabled, headers, maxCount, maxSize, method, name, origin, size } = props
-  const fileInputRef = React.useRef()
-  const [fileInfo, setFileInfo] = React.useState(defaultFileInfo)
-  const [images, setImages] = React.useState([])
+  const {
+    action,
+    children,
+    className,
+    color,
+    data,
+    defaultValue,
+    disabled,
+    headers,
+    maxCount,
+    maxSize,
+    method,
+    name,
+    origin,
+    size,
+  } = props;
+  const fileInputRef = React.useRef();
+  const [fileInfo, setFileInfo] = React.useState(defaultFileInfo);
+  const [images, setImages] = React.useState([]);
 
   // ============================= Effect =============================
   React.useEffect(() => {
-    if(fileInfo.file && props.onChange) {
-      props.onChange(fileInfo)
-      !fileInfo.reject && uploadFile()
+    if (fileInfo.file && props.onChange) {
+      props.onChange(fileInfo);
+      !fileInfo.reject && uploadFile();
     }
-  }, [fileInfo.file])
+  }, [fileInfo.file]);
 
   React.useEffect(() => {
-    if(defaultValue) {
-      setImages(defaultValue)
+    if (defaultValue) {
+      setImages(defaultValue);
     }
-  }, [defaultValue])
+  }, [defaultValue]);
 
   // ============================= Events =============================
   const previewFile = () => {
-    if(!disabled) {
-      fileInputRef.current.click()
+    if (!disabled) {
+      fileInputRef.current.click();
     }
-  }
+  };
 
   // 读取文件信息
   const readFile = (event) => {
-    const file = event.target.files[0]
+    const file = event.target.files[0];
     // const url = URL.createObjectURL(file)
-    const fileReader = new FileReader()
+    const fileReader = new FileReader();
 
-    const fileSize = file.size / 1024
+    const fileSize = file.size / 1024;
 
-    if(maxSize && fileSize > maxSize) {
-      setFileInfo({ reject: true, file, maxSize })
-      return
+    if (maxSize && fileSize > maxSize) {
+      setFileInfo({ reject: true, file, maxSize });
+      return;
     }
 
-    fileReader.readAsDataURL(file)
+    fileReader.readAsDataURL(file);
 
-    fileReader.addEventListener('load', (event) => {
-      const { error } = event.target
+    fileReader.addEventListener("load", (event) => {
+      const { error } = event.target;
 
-      !error && setFileInfo({ reject: false, file })
-    })
-  }
+      !error && setFileInfo({ reject: false, file });
+    });
+  };
 
   // 上传文件
   const uploadFile = async () => {
-    const response = await request({ 
-      action, 
+    const response = await request({
+      action,
       data,
-      file: fileInfo.file, 
-      headers, 
-      method, 
-      name 
-    })
-    
-    if(props.onResponse) {
-      props.onResponse(response) 
+      file: fileInfo.file,
+      headers,
+      method,
+      name,
+    });
+
+    if (props.onResponse) {
+      props.onResponse(response);
     }
-  }
+  };
 
   // 预览
   const onPreview = (index) => {
-    console.log(index)
-  }
+    console.log(index);
+  };
 
   // 删除
   const onRemove = (index) => {
-    const newImages = tools.deepClone(images)
+    const newImages = tools.deepClone(images);
 
-    newImages.splice(index, 1)
+    newImages.splice(index, 1);
 
-    setImages(newImages)
-  }
+    setImages(newImages);
+  };
 
   return (
-    <UploadWrapper className={ className }>
+    <UploadWrapper className={className}>
       <UploadList>
-        {
-          images?.map((value, index) => (
-            <UploadListContainer 
-              key={ `uploadListContainer${ index }` }
-              size={ size }
-            >
-              <div className="z-upload-list-item">
-                <div className="z-upload-list-item-info">
-                  <span className="z-upload-span">
-                    <a 
-                      className="z-upload-list-item-thumbnail"
-                      href={ origin ? `${ origin }/${ value.url }` : value.url }
-                    >
-                      <img 
-                        className="z-upload-list-item-image"
-                        src={ origin ? `${ origin }/${ value.url }` : value.url }
-                      />
-                    </a>
-                  </span>
-                </div>
-
-                <span className="z-upload-list-item-actions">
-                  <span 
-                    className="icon icon-eye"
-                    onClick={ () => onPreview(index) }
-                  >eye</span>
-
-                  <span 
-                    className="icon icon-trash"
-                    onClick={ () => onRemove(index) }
-                  >del</span>
+        {images?.map((value, index) => (
+          <UploadListContainer key={`uploadListContainer${index}`} size={size}>
+            <div className="z-upload-list-item">
+              <div className="z-upload-list-item-info">
+                <span className="z-upload-span">
+                  <a
+                    className="z-upload-list-item-thumbnail"
+                    href={origin ? `${origin}/${value.url}` : value.url}
+                  >
+                    <img
+                      className="z-upload-list-item-image"
+                      src={origin ? `${origin}/${value.url}` : value.url}
+                    />
+                  </a>
                 </span>
               </div>
-            </UploadListContainer>
-          ))
-        }
-        
-        <UploadSelect 
-          color={ color }
-          disabled={ disabled }
-          size={ size }
+
+              <span className="z-upload-list-item-actions">
+                <span
+                  className="icon icon-eye"
+                  onClick={() => onPreview(index)}
+                >
+                  eye
+                </span>
+
+                <span
+                  className="icon icon-trash"
+                  onClick={() => onRemove(index)}
+                >
+                  del
+                </span>
+              </span>
+            </div>
+          </UploadListContainer>
+        ))}
+
+        <UploadSelect
+          color={color}
+          disabled={disabled}
+          size={size}
           style={{
-            display: !maxCount || (images.length < maxCount) ? 'inline-block' : 'none'
+            display:
+              !maxCount || images.length < maxCount ? "inline-block" : "none",
           }}
-          onClick={ previewFile }
+          onClick={previewFile}
         >
           <span className="z-upload">
-            <input 
-              ref={ fileInputRef }
-              style={{ display: 'none' }} 
-              type="file" 
-              onChange={ readFile }
+            <input
+              ref={fileInputRef}
+              style={{ display: "none" }}
+              type="file"
+              onChange={readFile}
             />
-            {
-              children
-              ||
+            {children || (
               <div>
                 <span className="plus">+</span>
                 <div className="label">Upload</div>
               </div>
-            }
+            )}
           </span>
         </UploadSelect>
       </UploadList>
     </UploadWrapper>
-  )
-}
+  );
+};
 
 Upload.propTypes = {
   // 上传的地址
@@ -178,7 +196,7 @@ Upload.propTypes = {
   // 限制上传大小
   maxSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   // 上传请求的 http method
-  method: PropTypes.oneOf(['POST', 'GET']),
+  method: PropTypes.oneOf(["POST", "GET"]),
   // 发到后台的文件参数名
   name: PropTypes.string,
   // URL 基础地址
@@ -188,15 +206,15 @@ Upload.propTypes = {
   // 后台返回的结果
   onResponse: PropTypes.func,
   // 组件大小
-  size: PropTypes.oneOf(['small', 'medium'])
-}
+  size: PropTypes.oneOf(["small", "medium"]),
+};
 
 Upload.defaultProps = {
-  color: '#1976d2',
+  color: "#1976d2",
   disabled: false,
-  method: 'POST',
-  name: 'file',
-  size: 'medium'
-}
+  method: "POST",
+  name: "file",
+  size: "medium",
+};
 
-export default Upload
+export default Upload;
