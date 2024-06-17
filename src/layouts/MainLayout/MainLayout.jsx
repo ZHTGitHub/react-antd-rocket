@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { pagesComponentsCreators } from "store/pages";
 import { ZHeader, ZMenu } from "../../components";
@@ -7,9 +7,9 @@ import { MainLayoutDiv } from "./style/MainLayout.styled";
 
 const MainLayout = (props) => {
   const { children } = props;
-  const [items, setItems] = React.useState([]);
+  const [items, setItems] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     getMenu();
   }, []); // eslint-disable-line
 
