@@ -8,7 +8,7 @@ const Modal = () => {
       content:
         "代码是写给人看的代码是写给人看的代码是写给人看的代码是写给人看的",
       // slot: <input></input>,
-      // html: '<h1>123</h1>',
+      // html: "<h1>123</h1>",
       width: 320,
     });
   };
